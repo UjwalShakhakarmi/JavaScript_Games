@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="300" id="canvas" height="300" style="background-color: black;">
+
+    </canvas>
+    <script>
+        const room = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+
+        //anonomous function no name but works
+        canvas.addEventListener("mousemove", (event) => {
+             context.clearRect(0 , 0 , 300 , 300); //clear screen
+              
+            context.beginPath();
+            context.arc(event.clientX,event.clientY, 80,0, 2* Math.PI);
+            context.fillStyle = "red";
+            context.fill();
+            
+            context.beginPath();
+            context.arc(event.clientX,event.clientY, 60,0, 2* Math.PI);
+            context.fillStyle = "white";
+            context.fill();
+            
+            context.beginPath();
+            context.arc(event.clientX,event.clientY, 40,0, 2* Math.PI);
+            context.fillStyle = "red";
+            context.fill();
+            
+            context.beginPath();
+            context.arc( event.clientX,event.clientY,20,0,2* Math.PI);
+            context.fillStyle = "blue";
+            context.fill();
+
+            context.beginPath();
+            context.arc( event.clientX,event.clientY,10,0,2* Math.PI);
+            context.fillStyle = "black";
+            context.fill();
+
+            
+        });
+
+        // document.addEventListener("keydown", (event) =>{
+        //     if(event.code === "ArrowUp"){
+        //         console.log()
+        //     }
+        // })
+    </script>
+</body>
+</html>
